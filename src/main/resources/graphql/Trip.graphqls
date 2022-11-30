@@ -1,0 +1,29 @@
+scalar DateTime
+
+type Trip {
+    id: ID!
+    destination: City!
+    memo: String
+    startDate: DateTime!
+    endDate: DateTime!
+}
+
+input TripInput {
+    destination: ID
+    memo: String
+    startDate: DateTime
+    endDate: DateTime
+}
+
+type Query {
+    getTrip(id: ID!): Trip
+}
+
+
+type Mutation {
+    createTrip(input: TripInput): Trip
+    deleteTrip(id: ID!): Boolean
+    editTrip(id: ID!, input: TripInput): Trip
+}
+
+

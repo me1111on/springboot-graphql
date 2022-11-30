@@ -1,0 +1,20 @@
+type City {
+    id: ID!
+    name: String!
+    detail: String!
+}
+
+
+input CityInput {
+    name: String
+    detail: String
+}
+
+extend type Mutation {
+    getCity(id: ID!): City
+    createCity(input: CityInput): City
+    deleteCity(id: ID!): Boolean
+    editCity(id: ID!, input: CityInput): City
+}
+
+
